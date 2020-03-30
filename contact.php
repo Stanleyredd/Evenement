@@ -19,8 +19,9 @@ include_once "navbar.php";
 </head>
 <body>
 
+<div>
 <h3>Contact page</h3>
-
+</div>
 
 </body>
 </html>

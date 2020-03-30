@@ -19,9 +19,9 @@ include_once "navbar.php";
     <title>Document</title>
 </head>
 <body>
-
+<div>
 <h3>Home page</h3>
-
+</div>
 
 <?php
 include_once "footer.php";

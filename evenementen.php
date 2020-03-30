@@ -7,7 +7,17 @@
  */
 include_once "navbar.php";
 
-?>
+
+//                $conn = new mysqli('localhost', 'root', '', 'mydb');
+//                if(isset($_GET['search'])){
+//                    $searchKey = $_GET['search'];
+//                    $sql = "SELECT * FROM nummer WHERE titel LIKE '%$searchKey%' OR  artiest LIKE '%$searchKey%'";
+//                }else
+//                    $sql = "SELECT * FROM nummer";
+//                $result = $conn->query($sql);
+//                ?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -36,7 +46,29 @@ include_once "navbar.php";
 
 <div>
     <h3>Evenementen page</h3>
-</div>
+</div> <form action="" method="GET">
+    <div class="col-md-6">
+        <label for="">Typ het nummer dat je zoekt!</label><br><br>
+        <input type="text" name="search" class='form-control' placeholder="Zoek hier" value=<?php echo @$_GET['search']; ?> ><br><br>
+    </div>
+    <div class="col-md-6 text-left">
+        <button class="btn">Zoek!</button>
+    </div>
+</form>
+
+<?php //while($row = $result->fetch_object() ): ?>
+<!--    <tr>-->
+<!--        <td>--><?php //echo $row->titel ?><!--</td>-->
+<!--        <td>--><?php //echo $row->artiest ?><!--</td>-->
+<!--        <td>--><?php //echo $row->duur ?><!--</td>-->
+<!---->
+<!--        <td><a href='wijzig_nummer.php?titel=--><?php
+//            $titel = $row->titel; echo $titel ?><!--'>Wijzig</a></td>-->
+<!--        <td><a href='back/back_verwijder_nummer.php?titel=--><?php
+//            $titel = $row->titel; echo $titel ?><!--''>Verwijder</a></td>-->
+<!---->
+<!--    </tr>-->
+<?php //endwhile; ?>
 
 <div id="div_table">
     <h3>Evenementen</h3>
@@ -53,15 +85,15 @@ include_once "navbar.php";
         <td>27-05-2019</td>
         <td>Jazz in duketown</td>
         <td>Grote markt, s ‘Hertogenbosch</td>
-        <td>❌</td>
-        <td>❌</td>
+        <td><a href="evenement/verwijderen.php">❌</a></td>
+        <td><a href="evenement/wijzigen.php">❌</a></td>
     </tr>
     <tr>
         <td>28-06-2019</td>
         <td>North Sea Jazz</td>
         <td>Ahoy, Rotterdam</td>
-        <td>❌</td>
-        <td>❌</td>
+        <td><a href="evenement/verwijderen.php">❌</a></td>
+        <td><a href="evenement/wijzigen.php">❌</a></td>
 
     </tr>
     </table>
