@@ -15,8 +15,9 @@ $begintijd = $_POST["begintijd"];
 $eindtijd = $_POST["eindtijd"];
 ?>
 <?php
+        $DBConnect = new mysqli("localhost","root","","evenement");
     $sql2 = "select * from evenement where evenementnaam='$evenementnaam'";
-    $result = $conn->query($sql2);
+    $result = $DBConnect->query($sql2);
 
     if ($result->num_rows > 0) {
     // output data of each row
@@ -24,34 +25,37 @@ $eindtijd = $_POST["eindtijd"];
         $evenementID = $row['evenementID'];
     }
     }else{
-    $conn->error;
+        $DBConnect->error;
     }
-    $conn->close();
+$DBConnect->close();
     ?>
+
 <?php
-$sql2 = "select * from evenement where evenementnaam='$evenementnaam'";
-$result = $conn->query($sql2);
+$DBConnect2 = new mysqli("localhost","root","","evenement");
+
+$sql3 = "select * from account where voornaam='$voornaam'";
+$result = $DBConnect2->query($sql3);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
-        $evenementID = $row['evenementID'];
+        $accountID = $row['accountID'];
     }
 }else{
-    $conn->error;
+    $DBConnect2->error;
 }
-$conn->close();
+$DBConnect2->close();
 ?>
 
 <?php
 
 
 
-$sql = "INSERT INTO presentie (accountID, evenementID, datum, begintijd, eindtijd) VALUES ('1', '$evenementID', '$datum', '$begintijd', '$eindtijd');";
+$sql = "INSERT INTO presentie (accountID, evenementID, datum, begintijd, eindtijd) VALUES ('$accountID', '$evenementID', '$datum', '$begintijd', '$eindtijd');";
 
 if ($conn->query($sql) == true){
     echo "gelukt";
-//    header("location:../zenders.php");
+    header("location:../accounts.php");
 }else{
     echo "Er is iets fout gegaan, probeer het opnieuw.<br><br>";
     echo "De error is: ";
