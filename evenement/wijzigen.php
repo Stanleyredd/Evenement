@@ -20,45 +20,73 @@ include_once "../navbar.php";
     <title>Document</title>
     <style>
 
+        #header{
+            text-align: center;
+        }
+
 
         #form {
-            width: 35%;
+            width: 60%;
+
             margin: 0 auto;
-            margin-top: 10px;
+            margin-top: 5px;
             border: 1px black solid;
-            text-align: center;
+        }
+
+        .col-25{
+            text-align: left;
+        }
+        .col-75{
+            text-align: left;
         }
     </style>
 </head>
 <body>
 <div id="div_table">
 
-    <table id="table1">
+    <form action="../back/wijzig_evenement.php" method="post">
+        <div id="form">
+            <h1 id="header">Evenement wijzigen</h1>
+            <label class="col-25" for="" >Evenement naam</label>
+            <?php
+            include_once "../back/conn.php";
 
 
-        <form action="back/back_toevoegen_nummer.php" method="post">
-            <div id="form">
-                <h1>Evenement wijzigen</h1>
-                <label for="" >datum</label><br>
-                <input type="date" required name="datum">
-                <br><br>
-                <label for="">Naam evenement</label><br>
-                <input type="text" required  name="naam_evenement">
-                <br><br>
-                <label for="">Locatie</label><br>
-                <input type='text' required name="locatie">
-                <br><br>
-                <label for="">Rollen</label><br>
-                <input type='text' required name="rollen">
-                <br><br><br><br><br><br>
-                <input type="reset" value="Reset" /><br><br>
-                <input type="submit" class="submit" value="Toevoegen"><br>
-            </div>
-        </form>
 
-        <div id="1" >
+            echo '<select name="evenementnaam"><option >Select</option>';
+
+            $sqli = "SELECT DISTINCT evenementnaam FROM evenement";
+            $result = mysqli_query($conn, $sqli);
+            while ($row = mysqli_fetch_array($result)) {
+                echo '<option name="evenementnaam">'.$row['evenementnaam'].'</option>';
+            }
+
+            echo '</select>';
+
+
+            ?>
+            <br><br>
+            <label class="col-25" for="" >Datum</label>
+            <input class="col-75" type="date"  name="datum">
+            <br><br>
+
+            <label class="col-25" for="" >Nieuwe evenement naam</label>
+            <input class="col-75" type='text'  name="Nieuwe_evenement_naam">
+            <br><br>
+            <label class="col-25" for="">Locatie</label>
+            <input class="col-75" type='text'  name="locatie">
+            <br><br>
+            <label class="col-25" for="">omschrijving</label>
+            <textarea class="col-75"   name="omschrijving"></textarea>
+            <br><br><br><br>
+            <input type="reset" value="Reset" /><br><br>
+            <input type="submit" class="submit" value="Toevoegen"><br>
         </div>
-    </table>
+    </form>
+
+    <div id="1" >
+    </div>
+
 </div>
 
 </body>

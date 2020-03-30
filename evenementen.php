@@ -8,14 +8,7 @@
 include_once "navbar.php";
 
 
-//                $conn = new mysqli('localhost', 'root', '', 'mydb');
-//                if(isset($_GET['search'])){
-//                    $searchKey = $_GET['search'];
-//                    $sql = "SELECT * FROM nummer WHERE titel LIKE '%$searchKey%' OR  artiest LIKE '%$searchKey%'";
-//                }else
-//                    $sql = "SELECT * FROM nummer";
-//                $result = $conn->query($sql);
-//                ?>
+?>
 
 
 <!doctype html>
@@ -44,35 +37,14 @@ include_once "navbar.php";
 <body>
 
 
-<div>
-    <h3>Evenementen page</h3>
-</div> <form action="" method="GET">
-    <div class="col-md-6">
-        <label for="">Typ het nummer dat je zoekt!</label><br><br>
-        <input type="text" name="search" class='form-control' placeholder="Zoek hier" value=<?php echo @$_GET['search']; ?> ><br><br>
-    </div>
-    <div class="col-md-6 text-left">
-        <button class="btn">Zoek!</button>
-    </div>
-</form>
 
-<?php //while($row = $result->fetch_object() ): ?>
-<!--    <tr>-->
-<!--        <td>--><?php //echo $row->titel ?><!--</td>-->
-<!--        <td>--><?php //echo $row->artiest ?><!--</td>-->
-<!--        <td>--><?php //echo $row->duur ?><!--</td>-->
-<!---->
-<!--        <td><a href='wijzig_nummer.php?titel=--><?php
-//            $titel = $row->titel; echo $titel ?><!--'>Wijzig</a></td>-->
-<!--        <td><a href='back/back_verwijder_nummer.php?titel=--><?php
-//            $titel = $row->titel; echo $titel ?><!--''>Verwijder</a></td>-->
-<!---->
-<!--    </tr>-->
-<?php //endwhile; ?>
+
 
 <div id="div_table">
     <h3>Evenementen</h3>
     <a href="evenement/toevoegen.php"><h3>Evenement toevoegen</h3></a>
+    <a href="evenement/wijzigen.php"><h3>Evenement wijzigen</h3></a>
+    <a href="evenement/verwijderen.php"><h3>Evenement delete</h3></a>
     <table id="table1">
     <tr>
         <td>datum</td>
