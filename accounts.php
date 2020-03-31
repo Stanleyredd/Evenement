@@ -75,15 +75,51 @@ include "back/conn.php";
         a{
             text-decoration: none;
 
+        }div{
+             margin: 1%;
+
+         }
+        #nav_ul {
+
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .nav_li {
+            float: left;
+        }
+
+        .nav_a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover {
+            background-color: #111;
+        }
+        #login{
+            float: right;
         }
 
 
     </style>
 </head>
 <body>
-<?php
-include "navbar.php";
-?> <div id="toevoegen_div">
+<div>
+    <ul id="nav_ul">
+        <li class="nav_li"><a class="nav_a" href="index.php">Home</a></li>
+        <li class="nav_li"><a class="nav_a" href="accounts.php">Accounts</a></li>
+        <li class="nav_li"><a class="nav_a" href="evenementen.php">Evenementen </a></li>
+        <li class="nav_li"><a class="nav_a" href="contact.php">Contact </a></li>
+        <li id="login" class="nav_li"><a class="nav_a" href="/evenement/login_template/login.php">Mijn profiel </a></li>
+    </ul>
+</div>
+<div id="toevoegen_div">
 
 </div>
 <div class="container">
@@ -157,7 +193,7 @@ include "navbar.php";
 
 
                                 <td><a href="uren_toevoegen.php?voornaam=<?php echo $row->voornaam ?>">Toevoegen</a></td>
-                                <td><a href='uren_verwijderen.php?titel=<?php$voornaam = $row->voornaam; echo $voornaam ?>''>Verwijder</a></td>
+                                <td><a href='uren_verwijderen.php?voornaam=<?php echo $row->voornaam ?>'>Verwijder</a></td>
 
                             </tr>
                         <?php endwhile; ?>
