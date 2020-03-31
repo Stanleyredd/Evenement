@@ -157,7 +157,11 @@ include_once "navbar.php";
 
 
             $DBConnect2 = new mysqli("localhost","root","","evenement");
-            $sql = "Select presentie.accountID, presentie.evenementID, presentie.datum, presentie.begintijd, presentie.eindtijd, evenement.evenementnaam from presentie left join evenement on presentie.evenementID = evenement.evenementID  where presentie.accountID = '$accountID'";
+            $sql = "Select presentie.accountID, presentie.evenementID, presentie.datum, 
+presentie.begintijd, presentie.eindtijd, evenement.evenementnaam 
+from presentie left join evenement on presentie.evenementID = evenement.evenementID  where presentie.accountID = '$accountID'";
+
+
             $result = $DBConnect2->query($sql);
 
             if ($result->num_rows > 0) {

@@ -33,6 +33,8 @@ $sql = "INSERT INTO evenement (evenementID, evenementnaam, omschrijving, locatie
 
 if ($DBConnect->query($sql) == true){
     echo "gelukt";
+    header("location:../evenement/toevoegen.php");
+
 }else{
     echo "Er is iets fout gegaan, probeer het opnieuw.<br><br>";
     echo "De error is: ";
@@ -74,6 +76,8 @@ $result = $DBConnect2->query($sql_ober);
 
 if ($DBConnect2->query($sql_ober) == true){
     echo "gelukt";
+    header("location:../toevoegen.php");
+
 }else{
     echo "Er is iets fout gegaan, probeer het opnieuw.<br><br>";
     echo "De error is: ";
@@ -83,6 +87,8 @@ if ($DBConnect2->query($sql_ober) == true){
 $result2 = $DBConnect2->query($gastheren_vrouwen);
 if ($DBConnect2->query($gastheren_vrouwen) == true){
     echo "gelukt";
+    header("location:../toevoegen.php");
+
 }else{
     echo "Er is iets fout gegaan, probeer het opnieuw.<br><br>";
     echo "De error is: ";
@@ -92,7 +98,7 @@ if ($DBConnect2->query($gastheren_vrouwen) == true){
 $result3 = $DBConnect2->query($sql_barkeepers);
 if ($DBConnect2->query($sql_barkeepers) == true){
     echo "gelukt";
-    header("location:../index.php");
+    header("location:../toevoegen.php");
 }else{
     echo "Er is iets fout gegaan, probeer het opnieuw.<br><br>";
     echo "De error is: ";
