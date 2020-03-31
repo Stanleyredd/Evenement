@@ -106,10 +106,10 @@ $DBConnect->close();
 <body>
 <div>
     <ul id="nav_ul">
-        <li class="nav_li"><a class="nav_a" href="index.php">Home</a></li>
-        <li class="nav_li"><a class="nav_a" href="accounts.php">Accounts</a></li>
-        <li class="nav_li"><a class="nav_a" href="evenementen.php">Evenementen </a></li>
-        <li class="nav_li"><a class="nav_a" href="contact.php">Contact </a></li>
+        <li class="nav_li"><a class="nav_a" href="../index.php">Home</a></li>
+        <li class="nav_li"><a class="nav_a" href="../accounts.php">Accounts</a></li>
+        <li class="nav_li"><a class="nav_a" href="../evenementen.php">Evenementen </a></li>
+        <li class="nav_li"><a class="nav_a" href="../contact.php">Contact </a></li>
         <li class="nav_li" id="logout">    <a href="back/logout.php" class="btn btn-danger">Sign Out of Your Account</a>
         </li>
     </ul>
