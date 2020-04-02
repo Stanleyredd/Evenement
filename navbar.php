@@ -44,9 +44,9 @@
 <body>
 <div>
 <ul id="nav_ul">
-    <li class="nav_li"><a class="nav_a" href="index.php">Home</a></li>
-    <li class="nav_li"><a class="nav_a" href="accounts.php">Accounts</a></li>
-    <li class="nav_li"><a class="nav_a" href="evenementen.php">Evenementen </a></li>
+    <li class="nav_li"><a class="nav_a" href="../../evenement/index.php">Home</a></li>
+    <li class="nav_li"><a class="nav_a" href="../../evenement/accounts.php">Accounts</a></li>
+    <li class="nav_li"><a class="nav_a" href="../../evenement/evenementen.php">Evenementen </a></li>
     <li class="nav_li"><a class="nav_a" href="contact.php">Contact </a></li>
 </ul>
 </div>
