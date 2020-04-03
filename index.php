@@ -17,12 +17,21 @@ include_once "navbar.php";
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        #foto{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <div>
 <h3>Home page</h3>
 </div>
+<div ID="foto">
 
+    <img src="IMG/evenement2.jpg" alt="">
+    
+</div>
 <?php
 include_once "footer.php";
 

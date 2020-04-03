@@ -10,8 +10,29 @@ include "back/conn.php";
 
 
 
+                                $sql1 = "Select * from account;";
+                                $conn3 = new mysqli('localhost', 'root', '', 'evenement');
+                                $result = $conn3->query($sql1);
+
+                                if ($result->num_rows > 0) {
+                                    // output data of each row
+                                    while($row = $result->fetch_assoc()) {
+                                        $accountID = $row['accountID'];
+
+                                        echo "<br>$accountID<br>";
+
+                                    }
+                                } else {
+                                    echo'errpr'.$conn3->connect_error;
+                                }
+
+
+
+$result = $conn3->query($sql1);
 
 ?>
+
+
 
 
 <!doctype html>
@@ -131,22 +152,10 @@ include "back/conn.php";
 
                 <?php
 
-                                $sql2 = "Select sum(round(time_to_sec(eindtijd-begintijd)/3600,1)) as totaaluur from presentie where accountID = 1;";
-                                $conn2 = new mysqli('localhost', 'root', '', 'evenement');
-                                $result = $conn2->query($sql2);
-
-                                if ($result->num_rows > 0) {
-                                    // output data of each row
-                                    while($row = $result->fetch_assoc()) {
 
 
-                                        $totaaluur = $row['totaaluur'];
-                                        echo "<td>$totaaluur</td>";
 
-                                    }
-                                } else {
-                                    echo'errpr';
-                                }
+
 
 
 
@@ -185,13 +194,11 @@ include "back/conn.php";
                             <th>Verwijder</th>
                         </tr>
                         <?php while($row = $result->fetch_object() ): ?>
+
                             <tr>
-                                <td><?php echo $row->voornaam ?></td>
+                                <td><?php echo $row->voornaam; ?></td>
                                 <td><?php echo $row->achternaam ?></td>
-
-                                <td><?php $totaaluur ?></td>
-
-
+                                <td><?php echo $row->accountID ?></td>
                                 <td><a href="uren_toevoegen.php?voornaam=<?php echo $row->voornaam ?>">Toevoegen</a></td>
                                 <td><a href='uren_verwijderen.php?voornaam=<?php echo $row->voornaam ?>'>Verwijder</a></td>
 
@@ -208,6 +215,38 @@ include "back/conn.php";
 </div>
 
 
+<div style="text-align: center; border: black 1px solid" >
+
+    <?php
+        $conn2 = new mysqli('localhost', 'root', '', 'evenement');
+        $sqltijd = "SELECT * from account";
+        $result = $conn2->query($sqltijd);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                $voornaam =  $row['voornaam'];
+
+                echo "<br>$voornaam<br>";
+
+            }
+        } else {
+            echo'error'.$conn2->connect_error;
+        }
+
+
+
+    $result = $conn2->query($sqltijd);
+
+
+
+
+    ?>
+
+
+
+
+</div>
 
 
 
