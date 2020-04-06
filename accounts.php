@@ -219,15 +219,17 @@ $result = $conn3->query($sql1);
 
     <?php
         $conn2 = new mysqli('localhost', 'root', '', 'evenement');
-        $sqltijd = "SELECT * from account";
+        $sqltijd = "Select *, sum(round(time_to_sec(presentie.eindtijd-presentie.begintijd)/3600,1))
+as totaaluur from presentie group by accountID;";
         $result = $conn2->query($sqltijd);
 
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
-                $voornaam =  $row['voornaam'];
+                $totaaluur =  $row['totaaluur'];
+                $accountID =  $row['accountID'];
 
-                echo "<br>$voornaam<br>";
+                echo "AccountID:$accountID<br>$totaaluur<br><br>";
 
             }
         } else {
