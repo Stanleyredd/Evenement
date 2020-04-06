@@ -9,4 +9,6 @@
 $db['user'] = 'root';
 $db['password'] = '';
 $db['database'] = 'evenement';
-$db['host'] = 'localhost';
+$db['host'] = '127.0.0.1';
+
+?>

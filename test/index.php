@@ -6,4 +6,8 @@
  * Time: 14:42
  */
 
-echo "test;";
+include("config/config.php");
+include("src/Lib/db.php");
+include("src/Model/evenement.php");
+include("src/Controller/EvenementController.php");
+
