@@ -13,9 +13,3 @@ function read($dbh){
 
 }
 
-//$sql = "Select * from evenement";
-//foreach ($dbh->query($sql) as $evenement) {
-//
-//    echo "<br>".$evenement['locatie'];
-//
-//}
