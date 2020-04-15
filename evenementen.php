@@ -45,30 +45,30 @@ include_once "navbar.php";
     <a href="evenement/toevoegen.php"><h3>Evenement toevoegen</h3></a>
     <a href="evenement/wijzigen.php"><h3>Evenement wijzigen</h3></a>
     <a href="evenement/verwijderen.php"><h3>Evenement delete</h3></a>
-    <table id="table1">
-    <tr>
-        <td>datum</td>
-        <td>naam evenement</td>
-        <td>locatie</td>
-        <td>verwijder</td>
-        <td>wijzigen</td>
-    </tr>
-    <tr>
-        <td>27-05-2019</td>
-        <td>Jazz in duketown</td>
-        <td>Grote markt, s ‘Hertogenbosch</td>
-        <td><a href="evenement/verwijderen.php">❌</a></td>
-        <td><a href="evenement/wijzigen.php">❌</a></td>
-    </tr>
-    <tr>
-        <td>28-06-2019</td>
-        <td>North Sea Jazz</td>
-        <td>Ahoy, Rotterdam</td>
-        <td><a href="evenement/verwijderen.php">❌</a></td>
-        <td><a href="evenement/wijzigen.php">❌</a></td>
-
-    </tr>
-    </table>
+<!--    <table id="table1">-->
+<!--    <tr>-->
+<!--        <td>datum</td>-->
+<!--        <td>naam evenement</td>-->
+<!--        <td>locatie</td>-->
+<!--        <td>verwijder</td>-->
+<!--        <td>wijzigen</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>27-05-2019</td>-->
+<!--        <td>Jazz in duketown</td>-->
+<!--        <td>Grote markt, s ‘Hertogenbosch</td>-->
+<!--        <td><a href="evenement/verwijderen.php">❌</a></td>-->
+<!--        <td><a href="evenement/wijzigen.php">❌</a></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>28-06-2019</td>-->
+<!--        <td>North Sea Jazz</td>-->
+<!--        <td>Ahoy, Rotterdam</td>-->
+<!--        <td><a href="evenement/verwijderen.php">❌</a></td>-->
+<!--        <td><a href="evenement/wijzigen.php">❌</a></td>-->
+<!---->
+<!--    </tr>-->
+<!--    </table>-->
 
 
 </div>

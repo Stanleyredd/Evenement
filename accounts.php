@@ -10,25 +10,25 @@ include "back/conn.php";
 
 
 
-                                $sql1 = "Select * from account;";
-                                $conn3 = new mysqli('localhost', 'root', '', 'evenement');
-                                $result = $conn3->query($sql1);
-
-                                if ($result->num_rows > 0) {
-                                    // output data of each row
-                                    while($row = $result->fetch_assoc()) {
-                                        $accountID = $row['accountID'];
-
-                                        echo "<br>$accountID<br>";
-
-                                    }
-                                } else {
-                                    echo'errpr'.$conn3->connect_error;
-                                }
-
-
-
-$result = $conn3->query($sql1);
+//                                $sql1 = "Select * from account;";
+//                                $conn3 = new mysqli('localhost', 'root', '', 'evenement');
+//                                $result = $conn3->query($sql1);
+//
+//                                if ($result->num_rows > 0) {
+//                                    // output data of each row
+//                                    while($row = $result->fetch_assoc()) {
+//                                        $accountID = $row['accountID'];
+//
+//                                        echo "<br>$accountID<br>";
+//
+//                                    }
+//                                } else {
+//                                    echo'errpr'.$conn3->connect_error;
+//                                }
+//
+//
+//
+//$result = $conn3->query($sql1);
 
 ?>
 
@@ -215,35 +215,35 @@ $result = $conn3->query($sql1);
 </div>
 
 
-<div style="text-align: center; border: black 1px solid" >
+<!--<div style="text-align: center; border: black 1px solid" >-->
 
-    <?php
-        $conn2 = new mysqli('localhost', 'root', '', 'evenement');
-        $sqltijd = "Select *, sum(round(time_to_sec(presentie.eindtijd-presentie.begintijd)/3600,1))
-as totaaluur from presentie group by accountID;";
-        $result = $conn2->query($sqltijd);
-
-        if ($result->num_rows > 0) {
-            // output data of each row
-            while($row = $result->fetch_assoc()) {
-                $totaaluur =  $row['totaaluur'];
-                $accountID =  $row['accountID'];
-
-                echo "AccountID:$accountID<br>$totaaluur<br><br>";
-
-            }
-        } else {
-            echo'error'.$conn2->connect_error;
-        }
-
-
-
-    $result = $conn2->query($sqltijd);
-
-
-
-
-    ?>
+<!--    --><?php
+//        $conn2 = new mysqli('localhost', 'root', '', 'evenement');
+//        $sqltijd = "Select *, sum(round(time_to_sec(presentie.eindtijd-presentie.begintijd)/3600,1))
+//as totaaluur from presentie group by accountID;";
+//        $result = $conn2->query($sqltijd);
+//
+//        if ($result->num_rows > 0) {
+//            // output data of each row
+//            while($row = $result->fetch_assoc()) {
+//                $totaaluur =  $row['totaaluur'];
+//                $accountID =  $row['accountID'];
+//
+//                echo "AccountID:$accountID<br>$totaaluur<br><br>";
+//
+//            }
+//        } else {
+//            echo'error'.$conn2->connect_error;
+//        }
+//
+//
+//
+//    $result = $conn2->query($sqltijd);
+//
+//
+//
+//
+//    ?>
 
 
 
