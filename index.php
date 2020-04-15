@@ -8,7 +8,6 @@
 include_once "navbar.php";
 
 include_once "back/conn2.php";
-include_once "evenement2.php";
 include_once "back/conn2.php";
 
 

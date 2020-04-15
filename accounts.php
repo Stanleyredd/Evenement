@@ -189,7 +189,7 @@ $result = $conn3->query($sql1);
                         <tr>
                             <th>Titel</th>
                             <th>Nummer</th>
-                            <th>Totaal uren</th>
+<!--                            <th>Totaal uren</th>-->
                             <th>Toevoegen</th>
                             <th>Verwijder</th>
                         </tr>
@@ -198,7 +198,7 @@ $result = $conn3->query($sql1);
                             <tr>
                                 <td><?php echo $row->voornaam; ?></td>
                                 <td><?php echo $row->achternaam ?></td>
-                                <td><?php echo $row->accountID ?></td>
+<!--                                <td>--><?php //echo $row->accountID ?><!--</td>-->
                                 <td><a href="uren_toevoegen.php?voornaam=<?php echo $row->voornaam ?>">Toevoegen</a></td>
                                 <td><a href='uren_verwijderen.php?voornaam=<?php echo $row->voornaam ?>'>Verwijder</a></td>
 
