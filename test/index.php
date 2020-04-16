@@ -5,7 +5,7 @@
  * Date: 6-4-2020
  * Time: 14:42
  */
-
+session_start();
 include("config/config.php");
 include("src/Lib/db.php");
 
@@ -25,8 +25,8 @@ if (!isset($_GET['controller']) || $_GET['controller'] == 'home'){
         index($dbh);
     }elseif($_GET['action'] == "login"){
         login();
-    }elseif($_GET['action'] == "login"){
-        readByLogin($dbh, $_POST['emailaddress']);
+    }elseif($_GET['action'] == "checklogin"){
+        checklogin($dbh);
     }
 }else {
     include "src/View/404.php";
