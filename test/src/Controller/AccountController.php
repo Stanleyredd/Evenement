@@ -11,7 +11,7 @@
 function index($dbh){
     $accounts = read($dbh);
     $title = "Accounts";
-    var_dump($_SESSION['account']);
+//    var_dump($_SESSION['account']);
     include"src/View/account/account_overview.php";
 }
 
@@ -24,9 +24,15 @@ function login(){
 function checklogin($dbh){
    $account = readByLogin($dbh, $_POST['emailaddress']);
    if (password_verify($_POST['emailpassword'], $account['password'])){
-       $_SESSION['account'] = $account['voornaam']." - ".$account['tussenvoegsel']." - ".$account['achternaam'];
+       $_SESSION['account'] = $account['voornaam']."  ".$account['tussenvoegsel']."  ".$account['achternaam'];
        index($dbh);
    }else{
        login();
    };
+}
+
+function uitloggen(){
+    $_SESSION['account'] = [];
+    unset($_SESSION['account']);
+    login();
 }

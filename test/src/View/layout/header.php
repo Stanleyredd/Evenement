@@ -17,7 +17,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="index.php?controller=home">Home <span class="sr-only">(current)</span></a>
             </li>
@@ -27,11 +27,29 @@
             <li class="nav-item">
                 <a class="nav-link" href="index.php?controller=account">Accounts</a>
             </li>
+
             <li class="nav-item">
-                <a class="nav-link" href="index.php?controller=account&action=login">Inloggen</a>
+                <a class="nav-link" href="index.php?controller=functie">Functie</a>
             </li>
 
+            <?php
+            if (isset($_SESSION['account'])) {
+                ?>
+            <li class="nav-item">
+                <a class="nav-link" href="index.php?controller=account&action=uitloggen">Uitloggen</a>
+
+            </li>
+                <?php } else { ?>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?controller=account&action=login">Inloggen</a>
+                </li>
+                <?php } ?>
         </ul>
+            <span class="navbar-text">
+            <?php echo isset($_SESSION['account'])?$_SESSION['account']:"";      ?>
+            </span>
+
     </div>
 </nav>
 <div class="container">

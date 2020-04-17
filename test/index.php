@@ -15,6 +15,9 @@ include("src/Lib/db.php");
 if (!isset($_GET['controller']) || $_GET['controller'] == 'home'){
     include "src/Controller/HomeController.php";
 
+}elseif ($_GET['controller'] == 'functie'){
+    include "src/Controller/FunctieController.php";
+
 }elseif ($_GET['controller'] == 'evenement'){
     include "src/Model/evenement.php";
     include "src/Controller/EvenementController.php";
@@ -27,6 +30,8 @@ if (!isset($_GET['controller']) || $_GET['controller'] == 'home'){
         login();
     }elseif($_GET['action'] == "checklogin"){
         checklogin($dbh);
+    }elseif ($_GET['action'] == "uitloggen"){
+        uitloggen();
     }
 }else {
     include "src/View/404.php";
