@@ -6,6 +6,6 @@
  * Time: 12:25
  */
 
-$title = "Home";
+
 
 include"src/View/home /home.php";

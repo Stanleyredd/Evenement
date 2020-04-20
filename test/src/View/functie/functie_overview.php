@@ -8,6 +8,32 @@
 include "src/View/layout/header.php";
 
 ?>
+<ul>
+
+<?php foreach ($functies as $functie ){ ?>
+
+    <li>
+        <?= $functie['functieomschrijving']; ?>
+    </li>
+
+<?php } ?>
+
+</ul>
+
+
+<ul>
+
+    <?php foreach ($functies as $functieID ){ ?>
+
+        <li>
+            <?= $functieID['functieID']; ?>
+        </li>
+
+    <?php } ?>
+
+</ul>
+
+
 
 
 

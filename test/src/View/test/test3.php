@@ -2,27 +2,21 @@
 /**
  * Created by PhpStorm.
  * User: stanley
- * Date: 6-4-2020
- * Time: 15:07
+ * Date: 20-4-2020
+ * Time: 13:06
  */
 
 include "src/View/layout/header.php";
-
 ?>
 
 
-
 <ul>
-
-<?php foreach ($evenementen as $evenement ){ ?>
-
-<li>
-    <?= $evenement['omschrijving']; ?>
-</li>
-
-<?php } ?>
-
+    <?php foreach ($tests as $test){ ?>
+            <li><?= $test['email']; ?></li>
+    <?php }  ?>
 </ul>
+
+
 
 
 <?php

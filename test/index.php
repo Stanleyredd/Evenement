@@ -16,7 +16,11 @@ if (!isset($_GET['controller']) || $_GET['controller'] == 'home'){
     include "src/Controller/HomeController.php";
 
 }elseif ($_GET['controller'] == 'functie'){
+    include "src/Model/functie.php";
     include "src/Controller/FunctieController.php";
+}elseif ($_GET['controller'] == 'test'){
+    include "src/Model/test2.php";
+    include "src/Controller/test.php";
 
 }elseif ($_GET['controller'] == 'evenement'){
     include "src/Model/evenement.php";

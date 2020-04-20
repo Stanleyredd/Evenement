@@ -10,4 +10,5 @@
 $evenementen = read($dbh);
 $title = "Evenement";
 
+
 include"src/View/evenement/evenement_overview.php";
