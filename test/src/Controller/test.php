@@ -7,6 +7,8 @@
  */
 
 $tests = read($dbh);
+$tests2 = read($dbh);
+$tests3 = read($dbh);
 $title = "test";
 
 

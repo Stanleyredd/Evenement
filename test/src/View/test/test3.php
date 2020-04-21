@@ -9,10 +9,17 @@
 include "src/View/layout/header.php";
 ?>
 
-
-<ul>
-    <?php foreach ($tests as $test){ ?>
-            <li><?= $test['email']; ?></li>
+<div>
+<ul style="border: 1px solid black;">
+    <?php foreach ($tests as $tes1){ ?>
+            <li><?= $tes1['accountID']; ?></li>
+    <?php }  ?>
+</ul>
+    </div>
+<div>
+<ul style="border: 1px solid black;">
+    <?php foreach ($tests2 as $test2){ ?>
+            <li><?= $test2['voornaam']." ". $test2['achternaam'].": ". $test2['functieomschrijving']; ?></li>
     <?php }  ?>
 </ul>
 
