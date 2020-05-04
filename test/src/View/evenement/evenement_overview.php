@@ -10,73 +10,134 @@ include "src/View/layout/header.php";
 
 ?>
 
+<?php
 
-    <style>
-        .parent {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: repeat(5, 1fr);
-            grid-column-gap: 0px;
-            grid-row-gap: 0px;            border: 1px black solid ;
+/**
+ * Created by PhpStorm.
+ * User: stanley
+ * Date: 6-4-2020
+ * Time: 14:42
+ */
+include ("config/config.php");
+include("src/Lib/db.php");
+
+
+include('config/db.php');
+$status="";
+if (isset($_POST['code']) && $_POST['code']!=""){
+    $code = $_POST['code'];
+    $result = mysqli_query($con,"SELECT * FROM `products` WHERE `code`='$code'");
+    $row = mysqli_fetch_assoc($result);
+    $name = $row['name'];
+    $code = $row['code'];
+    $price = $row['price'];
+    $image = $row['image'];
+
+    $cartArray = array(
+        $code=>array(
+            'name'=>$name,
+            'code'=>$code,
+            'price'=>$price,
+            'quantity'=>1,
+            'image'=>$image)
+    );
+
+    if(empty($_SESSION["shopping_cart"])) {
+        $_SESSION["shopping_cart"] = $cartArray;
+        $status = "<div class='box'>Product is added to your cart!</div>";
+
+
+    }else{
+        $array_keys = array_keys($_SESSION["shopping_cart"]);
+        if(in_array($code,$array_keys)) {
+            $status = "<div class='box' style='color:red;'>
+		Product is already added to your cart!</div>";
+
+
+        } else {
+            $_SESSION["shopping_cart"] = array_merge($_SESSION["shopping_cart"],$cartArray);
+            $status = "<div class='box'>Product is added to your cart!</div>";
 
 
         }
 
-        .div1 { grid-area: 1 / 1 / 2 / 2; }
-        .div2 { grid-area: 1 / 2 / 2 / 3; }
-        .div3 { grid-area: 1 / 3 / 2 / 4; }
-        .div4 { grid-area: 1 / 4 / 2 / 5; }
+    }
+}
+?>
 
-        .item1 { grid-area: main; }
-        .item2 { grid-area: datum; }
-        .item3 { grid-area: naam; }
-        .item4 { grid-area: locatie; }
-        .item45 { grid-area: verwijder; }
+    <html>
+    <head>
+        <title>test</title>
+        <link rel='stylesheet' href='css/style.css' type='text/css' media='all' />
+        <style>
 
-
-        .grid-container {
-            display: grid;
-            grid-template-areas:
-                    'main main main main main main'
-                    'datum naam naam naam locatie verwijder';
-            /*border: 1px black solid ;*/
-            grid-gap: 10px;
-            padding: 10px;
-        }
-
-        .grid-container > div {
-            background-color: rgba(255, 255, 255, 0.8);
-            text-align: left;
-            border: 1px black solid ;
-            padding: 20px 0;
-            font-size: 30px;
-
-        }
-<?php foreach ($evenementen as $evenement) { ?>
-    </style><div class="parent">
+        </style>
+    </head>
+    <body>
+    <div id="header">
+    <?php
+    if(!empty($_SESSION["shopping_cart"])) {
+        $cart_count = count(array_keys($_SESSION["shopping_cart"]));
+        ?>
+        <div class="cart_div" >
+            <a href="cart.php" id="bigcart"><img src="cart-icon.png"/>Winkelwagen<span><?php echo $cart_count; ?></span></a>
 
 
-    <div class="div1"> <?= $evenement['evenementID']; ?></div>
-    <div class="div2"> <?= $evenement['evenementID']; ?></div>
-    <div class="div3"> <?= $evenement['evenementID']; ?></div>
-    <div class="div4"> <?= $evenement['evenementID']; ?></div>
-</div><?php } ?>
-    <div class="grid-container" style="text-align: center">
-    <div class="item1" style="text-align: center">Evenementen</div>
+        </div>
+        <?php
+    }
+    ?>
+
+        <h2 style="text-align: center">Winkel</h2>
+        <h5 id="winkelwagen"><a href="cart.php" style="color: #111111; text-decoration: none">Winkelwagen</span></a></h5>
+
+
     </div>
 
-<?php foreach ($evenementen as $evenement) { ?>
-    <div class="grid-container">
+<div style="text-align: center">
+        <?php
+
+
+        $result = mysqli_query($con,"SELECT * FROM `products`");
+        while($row = mysqli_fetch_assoc($result)){
+            echo "<div class='product_wrapper'>
+			  <form method='post' action=''>
+			  <input type='hidden' name='code' value=".$row['code']." />
+			  <div class='image'><img style='height: 100px;' src='".$row['image']."' /></div>
+			  <div class='name'>".$row['name']."</div>
+		   	  <div class='price'>€".$row['price']."</div>
+			  <button type='submit' class='buy'>+ In winkelwagen</button>
+			  </form>
+		   	  </div>";
+        }
+        mysqli_close($con);
+        ?>
+<!--            <a href="cart.php"><img src="cart-icon.png" /> Cart<span></span></a>-->
+
+        <div style="clear:both;"></div>
+
+        <div class="message_box" style="margin:10px 0px;">
+            <?php echo $status; ?>
+        </div>
+
+        <br /><br />
+    </div>
 
 
 
-    <div class="item2"><h3> <?= $evenement['evenementID']; ?></h3></div>
-    <div class="item3"<h3><?= $evenement['evenementnaam']; ?></h3></div>
-    <div class="item4"><h3><?= $evenement['locatie']; ?></h3></div>
-    <div class="item45">x</div>
+
+    </div>
+    </body>
+    </html>
 
 
-</div><?php } ?>
+
+        </div>
+    </nav>
+
+
 <?php
 include "src/View/layout/footer.php";
+
+
 ?>

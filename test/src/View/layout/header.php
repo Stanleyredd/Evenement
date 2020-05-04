@@ -50,11 +50,38 @@
             <?php echo isset($_SESSION['account'])?$_SESSION['account']:"";      ?>
             </span>
 
+        <span class="navbar-text">        <a href="cart.php" style="padding-left: 20px"><img src="cart-icon.png" /><span></span></a>
+
+
+
+        <!--        --><?php
+//        if(!empty($_SESSION["shopping_cart"])) {
+//            $cart_count = count(array_keys($_SESSION["shopping_cart"]));
+//            ?>
+<!--            <li class="active" style="float:right">-->
+<!---->
+<!--                <div class="cart_div">-->
+<!--                    <a href="cart.php"><img src="cart-icon.png" /><span>-->
+<?php //echo $cart_count; ?><!--</span></a>-->
+<!--                </div>-->
+<!--            </li>-->
+<!---->
+<!--            --><?php
+//        }else{ ?>
+<!---->
+<!--<!--                <div>-->
+<!--<!--                    <a href="cart.php"><img src="cart-icon.png" /><span></span></a>-->
+<!--<!--                </div>-->
+<!---->
+<!---->
+<!--        --><?php //} ?>
     </div>
 </nav>
 <div class="container">
 
+    <?php
 
+    ?>
 
 
 
