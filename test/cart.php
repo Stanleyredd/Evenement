@@ -187,6 +187,7 @@ $total_price += ($product["price"]*$product["quantity"]);
     }
     ?>
 </div>
+
 <div style="clear:both;"></div>
 
         </tbody>

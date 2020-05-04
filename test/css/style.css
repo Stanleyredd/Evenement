@@ -1,5 +1,5 @@
 *{
-/*border: black 1px dotted;*/
+border: black 1px dotted;
 }
 h2,h5{
 color: black;
@@ -89,7 +89,43 @@ text-decoration: none
 .cart .remove:hover {
 	text-decoration:underline;
 	}
-#conainer2{
+/*---------------------account page-----------------------------*/
+
+#id{
+    text-align: center;}
+
+.item2 { grid-area: menu;
+}
+.item3 { grid-area: main;
+}.grid-container {
+     display: grid;
+     grid-template-areas:
+             'menu main main main main main';
+     grid-gap: 10px;
+ }
+
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: left;
+}
+.vertical-menu {
+}
+
+.vertical-menu a {
+
+    color: black;
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    color: blue;
+}
+
+.vertical-menu a.active {
+
+    color: black;
 }
 @media screen and (max-width:800px) {
     .product_wrapper {
