@@ -8,7 +8,7 @@
 
 $db['user'] = 'root';
 $db['password'] = '';
-$db['database'] = 'evenement';
+$db['database'] = 'winkel_examen';
 $db['host'] = '127.0.0.1';
 
 ?>

@@ -16,6 +16,5 @@ function read($dbh){
 function readByLogin($dbh, $email){
     $stmt = $dbh->prepare("Select * from account where email=:email");
     $stmt->execute(['email' => $email]);
-//    $user = $stmt->fetch();
     return $stmt->fetch();
 }

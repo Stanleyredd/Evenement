@@ -21,7 +21,7 @@ include "src/View/layout/header.php";
     <input type="password" name="emailpassword" class="form-control" id="emailpassword" placeholder="Password">
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+  <button type="submit" class="btn btn-primary">Submit</button>    <a class="btn btn-primary" href="index.php?controller=account&action=register">Register</a>
 
+</form>
 <?php include "src/View/layout/footer.php"; ?>

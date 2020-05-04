@@ -22,15 +22,13 @@
                 <a class="nav-link" href="index.php?controller=home">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.php?controller=evenement">Evenement</a>
+                <a class="nav-link" href="index.php?controller=winkel">Winkel</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="index.php?controller=account">Accounts</a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="index.php?controller=functie">Functies</a>
-            </li>
+
 
             <?php
             if (isset($_SESSION['account'])) {
@@ -45,6 +43,9 @@
                     <a class="nav-link" href="index.php?controller=account&action=login">Inloggen</a>
                 </li>
                 <?php } ?>
+            <li class="nav-item">
+                <a class="nav-link" href="index.php?controller=account&action=register">Register</a>
+            </li>
         </ul>
             <span class="navbar-text">
             <?php echo isset($_SESSION['account'])?$_SESSION['account']:"";      ?>

@@ -196,5 +196,5 @@ $total_price += ($product["price"]*$product["quantity"]);
 </body>
 </html>
 </div>
-<a href="index.php?controller=evenement"><h3>Terug naar winkel</h3></a>
+<a href="index.php?controller=winkel"><h3>Terug naar winkel</h3></a>
 <div style="clear:both;"></div>

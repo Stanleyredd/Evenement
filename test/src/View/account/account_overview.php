@@ -7,7 +7,12 @@
  */
 include "src/View/layout/header.php";
 
-?>
+            if (!isset($_SESSION['account'])) {
+                header("location: index.php?controller=account&action=login");
+            }
+                ?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -44,7 +49,22 @@ echo "".$_SESSION['account'];
     </div>
     <div class="item3">
 
-
+        <div id="bestellingen">
+            <table>
+            <tr>
+                <td>bestelling nummer</td>
+                <td>Product naam/namen</td>
+                <td>Datum</td>
+                <td>Prijs</td>
+            </tr>
+                <tr>
+                <td>00234155</td>
+                <td>airpods</td>
+                <td>12-06-2020</td>
+                <td>€180</td>
+            </tr>
+            </table>
+        </div>
 
     </div>
 

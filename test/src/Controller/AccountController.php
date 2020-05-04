@@ -36,3 +36,9 @@ function uitloggen(){
     unset($_SESSION['account']);
     login();
 }
+
+function register(){
+    $title = "Register";
+    include("src/View/account/register.php");
+
+}

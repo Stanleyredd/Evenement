@@ -1,5 +1,5 @@
 *{
-border: black 1px dotted;
+/*border: black 1px dotted;*/
 }
 h2,h5{
 color: black;
@@ -97,6 +97,8 @@ text-decoration: none
 .item2 { grid-area: menu;
 }
 .item3 { grid-area: main;
+
+
 }.grid-container {
      display: grid;
      grid-template-areas:
@@ -106,7 +108,7 @@ text-decoration: none
 
 .grid-container > div {
     background-color: rgba(255, 255, 255, 0.8);
-    text-align: left;
+
 }
 .vertical-menu {
 }
@@ -127,6 +129,9 @@ text-decoration: none
 
     color: black;
 }
+#bestellingen{
+}
+/*---------------------responsive-----------------------------*/
 @media screen and (max-width:800px) {
     .product_wrapper {
         float: none;
