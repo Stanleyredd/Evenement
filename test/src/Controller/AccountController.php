@@ -25,6 +25,7 @@ function checklogin($dbh){
    $account = readByLogin($dbh, $_POST['emailaddress']);
    if (password_verify($_POST['emailpassword'], $account['password'])){
        $_SESSION['account'] = $account['voornaam']."  ".$account['tussenvoegsel']."  ".$account['achternaam'];
+       $_SESSION['email'] = $account['email'];
        index($dbh);
    }else{
        login();
@@ -40,5 +41,11 @@ function uitloggen(){
 function register(){
     $title = "Register";
     include("src/View/account/register.php");
+
+}
+
+function accountoverzicht(){
+    $title = "Account overzicht";
+    include("src/View/account/profiel.php");
 
 }

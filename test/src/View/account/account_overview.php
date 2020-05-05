@@ -7,12 +7,14 @@
  */
 include "src/View/layout/header.php";
 
-            if (!isset($_SESSION['account'])) {
-                header("location: index.php?controller=account&action=login");
-            }
-                ?>
+if (!isset($_SESSION['account'])) {
+    header("location: index.php?controller=account&action=login");
+}
+             echo $_SESSION['email'];
+             echo "<br>";
 
 
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -30,8 +32,8 @@ include "src/View/layout/header.php";
 
 <h2 id="id">
 <?php
-echo "".$_SESSION['account'];
-?>
+          echo isset($_SESSION['account'])?$_SESSION['account']:"";      ?>
+
 </h2>
 
 <div class="grid-container">
@@ -40,9 +42,9 @@ echo "".$_SESSION['account'];
 
         <div class="vertical-menu">
             <a href="#">Bestellingen</a>
-            <a href="#">Accountoverzicht</a>
+            <a href="index.php?controller=account&action=accountoverzicht">Accountoverzicht</a>
             <a href="#">Contact</a>
-            <a href="#">Uitloggen</a>
+            <a href="index.php?controller=account&action=uitloggen">Uitloggen</a>
         </div>
 
 
@@ -52,16 +54,32 @@ echo "".$_SESSION['account'];
         <div id="bestellingen">
             <table>
             <tr>
-                <td>bestelling nummer</td>
-                <td>Product naam/namen</td>
-                <td>Datum</td>
-                <td>Prijs</td>
+                <td class="bestellingen">bestelling nummer</td>
+                <td class="bestellingen">Product naam/namen</td>
+                <td class="bestellingen">Datum</td>
+                <td class="bestellingen">Prijs</td>
             </tr>
                 <tr>
-                <td>00234155</td>
-                <td>airpods</td>
-                <td>12-06-2020</td>
-                <td>€180</td>
+                <td class="bestellingen">00234155</td>
+                <td class="bestellingen">airpods</td>
+                <td class="bestellingen">12-06-2020</td>
+                <td class="bestellingen">€180</td>
+            </tr>
+                <tr>
+                <td class="bestellingen">00234155</td>
+                <td class="bestellingen">airpods</td>
+                <td class="bestellingen">12-06-2020</td>
+                <td class="bestellingen">€180</td>
+            </tr> <tr>
+                <td class="bestellingen">00234155</td>
+                <td class="bestellingen">airpods</td>
+                <td class="bestellingen">12-06-2020</td>
+                <td class="bestellingen">€180</td>
+            </tr> <tr>
+                <td class="bestellingen">00234155</td>
+                <td class="bestellingen">airpods</td>
+                <td class="bestellingen">12-06-2020</td>
+                <td class="bestellingen">€180</td>
             </tr>
             </table>
         </div>

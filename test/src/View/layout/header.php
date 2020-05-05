@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,7 +10,14 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <style>
+        #uitloggen:hover{
+            color: red;
+        }
+        #inloggen:hover{
+            color: limegreen;
+        }
+    </style>
     <title><?= $title ?></title>
 </head>
 <body>
@@ -34,13 +44,13 @@
             if (isset($_SESSION['account'])) {
                 ?>
             <li class="nav-item">
-                <a class="nav-link" href="index.php?controller=account&action=uitloggen">Uitloggen</a>
+                <a class="nav-link" id="uitloggen" href="index.php?controller=account&action=uitloggen">Uitloggen</a>
 
             </li>
                 <?php } else { ?>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?controller=account&action=login">Inloggen</a>
+                    <a class="nav-link" id="inloggen" href="index.php?controller=account&action=login">Inloggen</a>
                 </li>
                 <?php } ?>
             <li class="nav-item">
@@ -53,29 +63,6 @@
 
         <span class="navbar-text">        <a href="cart.php" style="padding-left: 20px"><img src="cart-icon.png" /><span></span></a>
 
-
-
-        <!--        --><?php
-//        if(!empty($_SESSION["shopping_cart"])) {
-//            $cart_count = count(array_keys($_SESSION["shopping_cart"]));
-//            ?>
-<!--            <li class="active" style="float:right">-->
-<!---->
-<!--                <div class="cart_div">-->
-<!--                    <a href="cart.php"><img src="cart-icon.png" /><span>-->
-<?php //echo $cart_count; ?><!--</span></a>-->
-<!--                </div>-->
-<!--            </li>-->
-<!---->
-<!--            --><?php
-//        }else{ ?>
-<!---->
-<!--<!--                <div>-->
-<!--<!--                    <a href="cart.php"><img src="cart-icon.png" /><span></span></a>-->
-<!--<!--                </div>-->
-<!---->
-<!---->
-<!--        --><?php //} ?>
     </div>
 </nav>
 <div class="container">

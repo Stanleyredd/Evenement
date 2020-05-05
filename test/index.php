@@ -23,7 +23,9 @@ if (!isset($_GET['controller']) || $_GET['controller'] == 'home') {
     if (!isset($_GET['action']) || $_GET['action'] == 'index') {
         index($dbh);
     }elseif($_GET['action'] == "register"){
-register();
+        register();
+    }elseif($_GET['action'] == "accountoverzicht"){
+        accountoverzicht();
     }elseif($_GET['action'] == "login"){
         login();
     }elseif($_GET['action'] == "checklogin"){
