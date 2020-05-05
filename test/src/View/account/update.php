@@ -8,6 +8,7 @@
 
 include "db.php";
 
+$accountID = $_POST["accountID"];
 $voornaam = $_POST['voornaam'];
 $tussenvoegsel = $_POST['tussenvoegsel'];
 $achternaam = $_POST['achternaam'];
@@ -18,6 +19,7 @@ $email = $_POST['email'];
 $telefoon = $_POST['telefoon'];
 
 
+echo $accountID."<br>";
 echo $voornaam."<br>";
 echo $tussenvoegsel."<br>";
 echo $achternaam."<br>";
@@ -29,30 +31,16 @@ echo $telefoon."<br>";
 
 
 
-
-$sql2 = "select *  from account where email= '$email'";
-$result = $con->query($sql2);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while ($row = $result->fetch_assoc()) {
-        $accountID = $row['accountID'];
-
-    }
-}else{
-    $con->error;
-}
-$con->close();
 ?>
 
 <?php
 $DBConnect2 = new mysqli("localhost","root","","winkel_examen");
 
-    $sql = "UPDATE account SET voornaam = '$voornaam', tussenvoegsel = 'te', achternaam = 'reddemann', adres = '$adres', postcode = '$postcode', plaats = '$plaats', email = '$email', telefoon = '$telefoon' WHERE account.accountID = '$accountID'";
+    $sql = "UPDATE account SET voornaam = '$voornaam', tussenvoegsel = '$tussenvoegsel', achternaam = '$achternaam', adres = '$adres', postcode = '$postcode', plaats = '$plaats', email = '$email', telefoon = '$telefoon' WHERE account.accountID = '$accountID'";
 
 
 if ($DBConnect2->query($sql) == true){
-    header("location: ../../../index.php?controller=account&action=accountoverzicht");
+//    header("location: ../../../index.php?controller=account&action=accountoverzicht");
 
 }else{
     echo "Er is iets fout gegaan, probeer het opnieuw.<br><br>";

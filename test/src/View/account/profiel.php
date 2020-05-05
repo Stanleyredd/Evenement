@@ -25,6 +25,7 @@ $result = $DBConnect->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
+        $accountID = $row["accountID"];
         $voornaam = $row["voornaam"];
         $tussenvoegsel = $row["tussenvoegsel"];
         $achternaam= $row["achternaam"];
@@ -99,6 +100,10 @@ $DBConnect->close();
     <form action="src/view/account/update.php" method="post">
         <div id="form">
             <h1 id="header">Profiel wijzigen</h1>
+
+            <!----------------------------AccountID----------------------------------------->
+            <input hidden class="form-control" type="text"  name="accountID" value="<?php echo $accountID?>">
+
             <label class="col-25" for="" >Voornaam</label>
             <input class="form-control" type="text"  name="voornaam" value="<?php echo $voornaam?>">
             <br>
@@ -124,7 +129,7 @@ $DBConnect->close();
             <br>
 
             <label class="col-25" for="" >E-mail</label>
-            <input class="form-control" type="text"  name="email" value="<?php echo $email?>">
+            <input class="form-control" required type="text"  name="email" value="<?php echo $email?>">
             <br>
 
             <label class="col-25" for="" >Telefoon nummer</label>
